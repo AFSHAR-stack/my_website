@@ -1,0 +1,516 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #050e2d;
+    color: #fff; /* Add this line to set default text color */
+}
+/* Scroll Bar */
+::-webkit-scrollbar{
+    width: 12px;
+}
+::-webkit-scrollbar-thumb
+{
+    background: #ef4c1a;
+    border-radius: 2px;
+}
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 7px 80px;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1b2141;
+    transition: 0.5s;
+    z-index: 1000;
+    
+}
+header.sticky{
+    background: rgb(13, 86, 128);
+    box-shadow: 0 5px 20px rgba(210, 59, 240, 0.9);
+}
+
+header .logo{
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+header .nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li{
+    list-style: none;
+    margin: 10px;
+}
+
+header ul li a{
+    color: aliceblue;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+header ul li a:hover{
+    background: rgb(0, 204, 255);
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 18px #d400ff;
+
+}
+
+header .action .searchBx {
+    padding: 5px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+
+}
+
+header .action .searchBx i{
+    font-size: 1.4em;
+    margin: 5px;
+    color: black;
+}
+
+header .action .searchBx input{
+    outline: none;
+    border: none;
+    font-size: 1em;
+    color:#222;
+}
+
+/* Home Banner */
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .bg{
+    position: relative;
+    width: 100%;
+    min-height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner .bg .content{
+    width:50% ;
+    height: 100%;
+}
+
+.banner .bg .content h2{
+    font-size: 3em; /* Increase font size for better visibility */
+    color: #1aeeef; /* Change color to make it stand out */
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+.banner .bg .content p{
+    font-size: 1.1em; /* Slightly increase font size */
+    color: #dbd9dd; /* Lighter color for better readability */
+    margin-bottom: 30px; /* Add some space below the paragraph */
+}
+
+.banner .bg .content a{
+    background: #1aeeef;
+    color: #050e2d;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.banner .bg .content a:hover{
+    background: #fff;
+    box-shadow: 0 0 20px #1aeeef;
+}
+
+.banner .bg img{
+    max-width: 100%; /* Ensure image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* about */
+
+.about{
+    position: relative;
+    width: 100%;
+    min-height: 75vh;
+    padding: 0px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.about .contentBX{
+    width: 50%;
+    margin: 20px;
+}
+
+.about .contentBX h2{
+    font-size: 3em;
+    font-weight: 700;
+    color: #1aeeef; /* Change color to make it stand out */
+    margin-bottom: 20px; /* Add some space below the heading */
+}
+
+.about .contentBX p{
+    max-width: 600px;
+    text-align: justify;
+    color: #dbd9dd;
+    margin-bottom: 30px; /* Add some space below the paragraph */
+}
+
+.about .contentBX a{
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border: 1px solid #1aeeef;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 5px;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.about .contentBX a:hover{
+    background: #1aeeef;
+    border: none;
+    color: #050e2d; 
+    box-shadow: 0 0 10px #1aeeef;
+}
+
+.about img{
+    width: 500px;
+    max-width: 100%; /* Ensure image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+    /* Remove the background-color property */
+}
+
+/* parts */
+.games{
+    padding: 50px 100px;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #050e2d;
+}
+
+.games h2 {
+    color: #1aeeef; /* Change color to make it stand out */
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.parts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    width: 100%;
+}
+
+.card {
+    background: #1b2141;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(26, 238, 239, 0.2);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #1b2141; /* Fallback color if image is missing */
+}
+
+.card .content {
+    padding: 20px;
+}
+
+.card .content h4 {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.card .info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card .info p {
+    color: #dbd9dd;
+}
+
+.card .info p span {
+    color: #1aeeef;
+    font-weight: bold;
+}
+
+.card .info .buy-btn {
+    padding: 8px 15px;
+    background: #1aeeef;
+    color: #050e2d;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.card .info .buy-btn:hover {
+    background: #fff;
+    color: #050e2d;
+    box-shadow: 0 0 10px #1aeeef;
+}
+
+/* Tournaments Section */
+.tournaments {
+    padding: 50px 100px;
+    background: #0a1744;
+}
+
+.tournaments .boxBx {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.tournaments .boxBx .box {
+    background: #1b2141;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tournaments .boxBx .box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(26, 238, 239, 0.2);
+}
+
+.tournaments h2 {
+    color: #1aeeef; /* Change color to make it stand out */
+    margin-bottom: 30px; /* Add some space below the heading */
+}
+
+.tournaments .boxBx .box img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    background-color: #1b2141; /* Fallback color if image is missing */
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 100px;
+    background: #050e2d;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact img {
+    width: 40%;
+    border-radius: 15px;
+    max-width: 100%; /* Ensure image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+    background-color: #1b2141; /* Fallback color if image is missing */
+}
+
+.contact .form {
+    width: 50%;
+}
+
+.contact .form .inputBx {
+    margin-bottom: 20px;
+}
+
+.contact .form .inputBx input,
+.contact .form .inputBx textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #1aeeef;
+    background: #1b2141;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.contact .form .inputBx input[type="submit"] {
+    background: #1aeeef;
+    color: #050e2d;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.contact .form .inputBx input[type="submit"]:hover {
+    background: #fff;
+    color: #050e2d;
+}
+
+.contact h1 {
+    color: #1aeeef; /* Change color to make it stand out */
+    margin-bottom: 30px; /* Add some space below the heading */
+}
+
+.contact .form .inputBx p {
+    color: #dbd9dd; /* Lighter color for better readability */
+    margin-bottom: 5px; /* Add some space below the label */
+}
+
+/* Search Results */
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #1b2141;
+    border-radius: 0 0 5px 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+}
+
+.search-result-item {
+    padding: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-result-item:hover {
+    background: #2a325a;
+}
+
+/* Search Bar and Results */
+.action {
+    position: relative;
+}
+
+.searchBx {
+    position: relative;
+    z-index: 1001;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(27, 33, 65, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 0 0 15px 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+.search-result-item {
+    padding: 12px 20px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item:hover {
+    background: rgba(42, 50, 90, 0.8);
+    transform: translateX(5px);
+}
+
+/* Scrollbar Styling */
+.search-results::-webkit-scrollbar {
+    width: 8px;
+}
+
+.search-results::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.search-results::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+/* Swiper styles */
+.swiper {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+}
+
+.swiper-slide .card {
+    display: block;
+    width: 100%;
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delay classes for staggered animations */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+
+
+
+
+
+
