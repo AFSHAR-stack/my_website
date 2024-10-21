@@ -138,3 +138,15 @@ document.addEventListener('DOMContentLoaded', () => {
 window.addEventListener('scroll', () => {
     fadeInOnScroll();
 });
+
+
+
+
+// Toggle menu functionality
+const toggleMenu = document.querySelector('.toggleMenu');
+const nav = document.querySelector('.nav');
+
+toggleMenu.addEventListener('click', function() {
+    toggleMenu.classList.toggle('active');
+    nav.classList.toggle('active');
+});

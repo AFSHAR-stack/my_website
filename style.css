@@ -1,265 +1,248 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
+
+/* Base styles and variables */
+:root {
+    --primary-color: #1aeeef;
+    --background-color: #050e2d;
+    --text-color: #fff;
+    --header-bg: #1b2141;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-body{
-    background: #050e2d;
-    color: #fff; /* Add this line to set default text color */
+
+html {
+    font-size: 16px;
 }
-/* Scroll Bar */
-::-webkit-scrollbar{
-    width: 12px;
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
 }
-::-webkit-scrollbar-thumb
-{
-    background: #ef4c1a;
-    border-radius: 2px;
+
+/* Responsive typography */
+@media screen and (max-width: 480px) {
+    html { font-size: 14px; }
 }
-header{
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    html { font-size: 15px; }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    html { font-size: 16px; }
+}
+
+@media screen and (min-width: 1025px) {
+    html { font-size: 18px; }
+}
+
+/* Header styles */
+header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 7px 80px;
-    display:flex;
+    padding: 1rem 5%;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #1b2141;
-    transition: 0.5s;
+    background: var(--header-bg);
     z-index: 1000;
-    
-}
-header.sticky{
-    background: rgb(13, 86, 128);
-    box-shadow: 0 5px 20px rgba(210, 59, 240, 0.9);
 }
 
-header .logo{
-    position: relative;
-    color: white;
+.logo {
+    color: var(--text-color);
     text-decoration: none;
-    font-size: 2em;
+    font-size: 1.5rem;
     font-weight: 700;
 }
 
-header .nav{
+.nav {
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-header ul li{
+.nav li {
     list-style: none;
-    margin: 10px;
+    margin-left: 1.25rem;
 }
 
-header ul li a{
-    color: aliceblue;
+.nav li a {
+    color: var(--text-color);
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 5px;
+    font-size: 1rem;
 }
 
-header ul li a:hover{
-    background: rgb(0, 204, 255);
-    color: rgb(0, 0, 0);
-    box-shadow: 0 0 18px #d400ff;
-
+/* Action (Search) styles */
+.action {
+    position: relative;
 }
 
-header .action .searchBx {
-    padding: 5px;
-    margin: 5px;
+.searchBx {
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    border-radius: 5px;
-
-}
-
-header .action .searchBx i{
-    font-size: 1.4em;
-    margin: 5px;
-    color: black;
-}
-
-header .action .searchBx input{
-    outline: none;
-    border: none;
-    font-size: 1em;
-    color:#222;
-}
-
-/* Home Banner */
-.banner{
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    padding: 0px 100px;
-    display: flex;
-    justify-content: center;
     align-items: center;
 }
 
-.banner .bg{
-    position: relative;
+.searchBx input {
+    padding: 0.5rem;
+    border: 1px solid var(--primary-color);
+    background: var(--header-bg);
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.searchBx a {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
-    min-height:100vh;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    background: var(--header-bg);
+    border: 1px solid var(--primary-color);
+    display: none;
+    z-index: 1001;
 }
 
-.banner .bg .content{
-    width:50% ;
-    height: 100%;
+.search-result-item {
+    padding: 0.5rem;
+    cursor: pointer;
 }
 
-.banner .bg .content h2{
-    font-size: 3em; /* Increase font size for better visibility */
-    color: #1aeeef; /* Change color to make it stand out */
-    margin-bottom: 20px; /* Add some space below the heading */
+.search-result-item:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
 }
 
-.banner .bg .content p{
-    font-size: 1.1em; /* Slightly increase font size */
-    color: #dbd9dd; /* Lighter color for better readability */
-    margin-bottom: 30px; /* Add some space below the paragraph */
+/* Banner styles */
+.banner {
+    padding: 6.25rem 5% 3.125rem;
 }
 
-.banner .bg .content a{
-    background: #1aeeef;
-    color: #050e2d;
-    padding: 12px 25px;
-    font-size: 1.1em;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.banner .bg .content a:hover{
-    background: #fff;
-    box-shadow: 0 0 20px #1aeeef;
-}
-
-.banner .bg img{
-    max-width: 100%; /* Ensure image doesn't overflow */
-    height: auto; /* Maintain aspect ratio */
-}
-
-/* about */
-
-.about{
-    position: relative;
-    width: 100%;
-    min-height: 75vh;
-    padding: 0px 100px;
+.banner .bg {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.about .contentBX{
-    width: 50%;
-    margin: 20px;
+.banner .content {
+    max-width: 50%;
 }
 
-.about .contentBX h2{
-    font-size: 3em;
-    font-weight: 700;
-    color: #1aeeef; /* Change color to make it stand out */
-    margin-bottom: 20px; /* Add some space below the heading */
+.banner h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.25rem;
 }
 
-.about .contentBX p{
-    max-width: 600px;
-    text-align: justify;
-    color: #dbd9dd;
-    margin-bottom: 30px; /* Add some space below the paragraph */
+.banner p {
+    margin-bottom: 1.25rem;
 }
 
-.about .contentBX a{
+.banner .btn {
     display: inline-block;
-    padding: 10px 20px;
-    margin: 20px 0;
-    border: 1px solid #1aeeef;
+    padding: 0.625rem 1.25rem;
+    background: var(--primary-color);
+    color: var(--background-color);
     text-decoration: none;
-    font-weight: 700;
-    border-radius: 5px;
-    color: #fff;
-    letter-spacing: 1px;
+    font-weight: 500;
+    border-radius: 0.3125rem;
 }
 
-.about .contentBX a:hover{
-    background: #1aeeef;
-    border: none;
-    color: #050e2d; 
-    box-shadow: 0 0 10px #1aeeef;
+.banner img {
+    max-width: 45%;
+    height: auto;
 }
 
-.about img{
-    width: 500px;
-    max-width: 100%; /* Ensure image doesn't overflow */
-    height: auto; /* Maintain aspect ratio */
-    /* Remove the background-color property */
-}
-
-/* parts */
-.games{
-    padding: 50px 100px;
-    width: 100%;
-    min-height: 100vh;
+/* About section styles */
+.about {
+    padding: 3.125rem 5%;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    background: #050e2d;
+}
+
+.about .contentBX {
+    max-width: 50%;
+}
+
+.about h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.25rem;
+}
+
+.about p {
+    margin-bottom: 1.25rem;
+}
+
+.about a {
+    display: inline-block;
+    padding: 0.625rem 1.25rem;
+    background: var(--primary-color);
+    color: var(--background-color);
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: 0.3125rem;
+}
+
+.about img {
+    max-width: 45%;
+    height: auto;
+}
+
+/* Games (Parts) section styles */
+.games {
+    padding: 3.125rem 5%;
 }
 
 .games h2 {
-    color: #1aeeef; /* Change color to make it stand out */
-    font-size: 2.5em;
-    margin-bottom: 30px;
+    font-size: 1.8rem;
+    color: var(--primary-color);
     text-align: center;
+    margin-bottom: 1.875rem;
 }
 
 .parts-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    width: 100%;
+    gap: 1.25rem;
 }
 
 .card {
-    background: #1b2141;
-    border-radius: 15px;
+    background: var(--header-bg);
+    border-radius: 0.625rem;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(26, 238, 239, 0.2);
 }
 
 .card img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    background-color: #1b2141; /* Fallback color if image is missing */
 }
 
 .card .content {
-    padding: 20px;
+    padding: 0.9375rem;
 }
 
-.card .content h4 {
-    color: #fff;
-    font-size: 1.2em;
-    margin-bottom: 10px;
+.card h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.625rem;
 }
 
 .card .info {
@@ -268,233 +251,185 @@ header .action .searchBx input{
     align-items: center;
 }
 
-.card .info p {
-    color: #dbd9dd;
-}
-
-.card .info p span {
-    color: #1aeeef;
-    font-weight: bold;
-}
-
-.card .info .buy-btn {
-    padding: 8px 15px;
-    background: #1aeeef;
-    color: #050e2d;
-    border-radius: 5px;
+.card .buy-btn {
+    padding: 0.3125rem 0.625rem;
+    background: var(--primary-color);
+    color: var(--background-color);
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s ease;
+    border-radius: 0.3125rem;
+    font-size: 0.9rem;
 }
 
-.card .info .buy-btn:hover {
-    background: #fff;
-    color: #050e2d;
-    box-shadow: 0 0 10px #1aeeef;
-}
-
-/* Tournaments Section */
+/* Tournaments (Accessories) section styles */
 .tournaments {
-    padding: 50px 100px;
+    padding: 3.125rem 5%;
     background: #0a1744;
+}
+
+.tournaments h2 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.875rem;
 }
 
 .tournaments .boxBx {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.25rem;
 }
 
-.tournaments .boxBx .box {
-    background: #1b2141;
-    border-radius: 15px;
+.tournaments .box {
+    background: var(--header-bg);
+    border-radius: 0.625rem;
     overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tournaments .boxBx .box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(26, 238, 239, 0.2);
-}
-
-.tournaments h2 {
-    color: #1aeeef; /* Change color to make it stand out */
-    margin-bottom: 30px; /* Add some space below the heading */
-}
-
-.tournaments .boxBx .box img {
+.tournaments .box img {
     width: 100%;
     height: 200px;
     object-fit: cover;
-    background-color: #1b2141; /* Fallback color if image is missing */
 }
 
-/* Contact Section */
+.tournaments .box .content {
+    padding: 0.9375rem;
+}
+
+.tournaments .box h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.625rem;
+}
+
+.tournaments .box .btn {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tournaments .box .btn a {
+    padding: 0.3125rem 0.625rem;
+    background: var(--primary-color);
+    color: var(--background-color);
+    text-decoration: none;
+    border-radius: 0.3125rem;
+    font-size: 0.9rem;
+}
+
+/* Contact section styles */
 .contact {
-    padding: 50px 100px;
-    background: #050e2d;
+    padding: 3.125rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .contact img {
-    width: 40%;
-    border-radius: 15px;
-    max-width: 100%; /* Ensure image doesn't overflow */
-    height: auto; /* Maintain aspect ratio */
-    background-color: #1b2141; /* Fallback color if image is missing */
+    max-width: 45%;
+    height: auto;
 }
 
 .contact .form {
     width: 50%;
 }
 
-.contact .form .inputBx {
-    margin-bottom: 20px;
-}
-
-.contact .form .inputBx input,
-.contact .form .inputBx textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #1aeeef;
-    background: #1b2141;
-    color: #fff;
-    border-radius: 5px;
-}
-
-.contact .form .inputBx input[type="submit"] {
-    background: #1aeeef;
-    color: #050e2d;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.contact .form .inputBx input[type="submit"]:hover {
-    background: #fff;
-    color: #050e2d;
-}
-
 .contact h1 {
-    color: #1aeeef; /* Change color to make it stand out */
-    margin-bottom: 30px; /* Add some space below the heading */
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.875rem;
 }
 
-.contact .form .inputBx p {
-    color: #dbd9dd; /* Lighter color for better readability */
-    margin-bottom: 5px; /* Add some space below the label */
+.contact .inputBx {
+    margin-bottom: 1.25rem;
 }
 
-/* Search Results */
-.search-results {
-    position: absolute;
-    top: 100%;
-    left: 0;
+.contact input,
+.contact textarea {
     width: 100%;
-    background: #1b2141;
-    border-radius: 0 0 5px 5px;
-    max-height: 300px;
-    overflow-y: auto;
-    display: none;
+    padding: 0.625rem;
+    border: 1px solid var(--primary-color);
+    background: var(--header-bg);
+    color: var(--text-color);
+    font-size: 1rem;
 }
 
-.search-result-item {
-    padding: 10px;
-    color: #fff;
+.contact input[type="submit"] {
+    background: var(--primary-color);
+    color: var(--background-color);
     cursor: pointer;
-    transition: background 0.3s;
+    font-weight: 500;
 }
 
-.search-result-item:hover {
-    background: #2a325a;
-}
-
-/* Search Bar and Results */
-.action {
-    position: relative;
-}
-
-.searchBx {
-    position: relative;
-    z-index: 1001;
-}
-
-.search-results {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: rgba(27, 33, 65, 0.95);
-    backdrop-filter: blur(10px);
-    border-radius: 0 0 15px 15px;
-    max-height: 300px;
-    overflow-y: auto;
+/* Mobile menu styles */
+.toggleMenu {
     display: none;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    z-index: 1000;
-}
-
-.search-result-item {
-    padding: 12px 20px;
-    color: #fff;
     cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.5rem;
 }
 
-.search-result-item:last-child {
-    border-bottom: none;
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 0.7rem 5%;
+    }
+
+    .nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--header-bg);
+        flex-direction: column;
+        align-items: center;
+        padding: 1.25rem 0;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
+    .nav li {
+        margin: 0.625rem 0;
+    }
+
+    .toggleMenu {
+        display: block;
+    }
+
+    .banner .bg,
+    .about,
+    .contact {
+        flex-direction: column;
+    }
+
+    .banner .content,
+    .banner img,
+    .about .contentBX,
+    .about img,
+    .contact img,
+    .contact .form {
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 1.25rem;
+    }
+
+    .banner h2,
+    .about h2,
+    .games h2,
+    .tournaments h2,
+    .contact h1 {
+        font-size: 1.6rem;
+    }
+
+    .card h4 {
+        font-size: 1.1rem;
+    }
 }
 
-.search-result-item:hover {
-    background: rgba(42, 50, 90, 0.8);
-    transform: translateX(5px);
-}
-
-/* Scrollbar Styling */
-.search-results::-webkit-scrollbar {
-    width: 8px;
-}
-
-.search-results::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
-}
-
-.search-results::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 4px;
-}
-
-.search-results::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
-}
-
-/* Swiper styles */
-.swiper {
-    width: 100%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
-
-.swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: 300px;
-    height: 300px;
-}
-
-.swiper-slide .card {
-    display: block;
-    width: 100%;
-}
-
-/* Animation classes */
+/* Animation styles */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .fade-in.appear {
@@ -502,15 +437,7 @@ header .action .searchBx input{
     transform: translateY(0);
 }
 
-/* Delay classes for staggered animations */
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
-.delay-5 { transition-delay: 0.5s; }
-
-
-
-
-
-
