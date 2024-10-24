@@ -23,6 +23,7 @@ body {
     background: var(--background-color);
     color: var(--text-color);
     line-height: 1.5;
+    overflow-x: hidden;
 }
 
 /* Responsive typography */
